@@ -38,7 +38,15 @@ require("lazy").setup({
       "ibhagwan/fzf-lua",              -- optional
     },
     config = true
-  }
+  },
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      { 'theHamsta/nvim-dap-virtual-text', config = true },
+      { 'rcarriga/nvim-dap-ui', dependencies = { 'nvim-neotest/nvim-nio' }, config = true },
+    }
+  },
+  "nvim-treesitter/nvim-treesitter"
 })
 
 require("plugins/coc")
@@ -46,3 +54,4 @@ require("plugins/telescope")
 require("plugins/fzf_lua")
 require("plugins/nerdtree")
 require("plugins/neogit")
+require("plugins/nvim_dap")
