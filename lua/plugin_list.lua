@@ -12,10 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    {
-        "nvim-telescope/telescope.nvim", tag = "0.1.6",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
+  {
+      "nvim-telescope/telescope.nvim", tag = "0.1.6",
+      dependencies = { "nvim-lua/plenary.nvim" }
+  },
 	{"neoclide/coc.nvim", branch = "release"},
 	"preservim/nerdtree",
 	{
@@ -40,13 +40,17 @@ require("lazy").setup({
     config = true
   },
   {
-    'mfussenegger/nvim-dap',
+    "mfussenegger/nvim-dap",
     dependencies = {
-      { 'theHamsta/nvim-dap-virtual-text', config = true },
-      { 'rcarriga/nvim-dap-ui', dependencies = { 'nvim-neotest/nvim-nio' }, config = true },
+      { "theHamsta/nvim-dap-virtual-text", config = true },
+      { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" }, config = true },
     }
   },
-  "nvim-treesitter/nvim-treesitter"
+  "nvim-treesitter/nvim-treesitter",
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" }
+  }
 })
 
 require("plugins/coc")
@@ -55,3 +59,4 @@ require("plugins/fzf_lua")
 require("plugins/nerdtree")
 require("plugins/neogit")
 require("plugins/nvim_dap")
+require("plugins/lualine")
