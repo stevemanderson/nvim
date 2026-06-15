@@ -13,5 +13,12 @@ if [ ! -d "./bin" ]; then
 fi
 
 # LANGUAGE SERVERS
-echo "Installing bash language server"
+echo "Installing language servers..."
 npm i -g bash-language-server
+npm i -g prettier
+
+echo "Installing Python language server"
+pip install python-lsp-server
+
+echo "Installing C/C++ language server (clangd)"
+sudo pacman -S --noconfirm clang
