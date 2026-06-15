@@ -1,10 +1,34 @@
-{  
+{
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
+    },
+    "clangd": {
+      "command": "clangd",
+      "args": [
+        "--background-index",
+        "--compile-commands-dir=.pio/build/esp32dev",
+        "--query-driver=/home/steve/.platformio/packages/toolchain-xtensa-esp32/bin/*"
+      ],
+      "rootPatterns": ["platformio.ini", ".git"],
+      "filetypes": ["c", "cc", "cpp", "c++", "h", "hpp"],
+      "initializationOptions": {
+        "clangdFileStatus": true,
+        "compilationDatabasePath": ".pio/build/esp32dev"
+      }
+    },
+    "python": {
+      "command": "pylsp",
+      "args": [],
+      "filetypes": ["python"],
+      "initializationOptions": {
+        "pylsp": {
+          "configurationSources": ["pycodestyle"]
+        }
+      }
     }
   }
 }

@@ -16,7 +16,7 @@ return {
     }
 
     local dap = require 'dap'
-    local js_based_languages = { 'typescript', 'javascript' }
+    local js_based_languages = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' }
     for _, language in ipairs(js_based_languages) do
       dap.configurations[language] = {
         {
